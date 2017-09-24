@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AdMobApiSample</string>
+
+    <string-array name="fragment_names">
+        <item>AdMob-Ad Listener</item>
+        <item>Admob-Ad Targeting</item>
+        <item>AdMob-Banner Sizes</item>
+    </string-array>
 </resources>
