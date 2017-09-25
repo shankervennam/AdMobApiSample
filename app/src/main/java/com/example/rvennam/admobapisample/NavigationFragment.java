@@ -1,16 +1,16 @@
 package com.example.rvennam.admobapisample;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -28,6 +28,7 @@ public class NavigationFragment extends Fragment
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
 
     private NavigationDrawerCallbacks mCallbacks;
+
     private ActionBarDrawerToggle mDrawerToggle;
 
     private DrawerLayout mDrawerLayout;
@@ -96,15 +97,62 @@ public class NavigationFragment extends Fragment
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
 
-        //TODO
-        //mDrawerLayout.setDrawerShadow(R.drawable);
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+
 
         android.support.v7.app.ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
 
-        //mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, R.drawab)
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout,
+                R.drawable.ic_launcher, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close)
+        {
+            @Override
+            public void onDrawerOpened(View drawerView)
+            {
+                super.onDrawerOpened(drawerView);
+                if(!isAdded())
+                {
+                    return;
+                }
 
+                if(!mUserLearnedDrawer)
+                {
+                    mUserLearnedDrawer = true;
+                    SharedPreferences sp = PreferenceManager
+                            .getDefaultSharedPreferences(getActivity());
+                    sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
+                }
+                getActivity().invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView)
+            {
+                super.onDrawerClosed(drawerView);
+                if(!isAdded())
+                {
+                    return;
+                }
+                getActivity().invalidateOptionsMenu();
+            }
+        };
+
+        if(!mUserLearnedDrawer && !mFromSavedInstanceState)
+        {
+            mDrawerLayout.openDrawer(mFragmentContainerView);
+        }
+
+        mDrawerLayout.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                mDrawerToggle.syncState();
+            }
+        });
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
     }
 
     private android.support.v7.app.ActionBar getActionBar()

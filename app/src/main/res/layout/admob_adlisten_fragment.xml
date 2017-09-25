@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".AdMobLisFragment">
+
+    <TextView
+        android:id="@+id/admob_listener"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/admob_ad_listener"
+        android:textSize="20dp"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_listener"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_ad_unit_id" >
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
