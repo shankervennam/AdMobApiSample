@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.example.rvennam.admobapisample.fragments.AdMobLisFragment;
 import com.example.rvennam.admobapisample.fragments.AdMobTargetFragment;
+import com.example.rvennam.admobapisample.fragments.Rewarded;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationFragment.NavigationDrawerCallbacks
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements
         {
             case 0:transaction.replace(R.id.container, new AdMobLisFragment()); break;
             case 1:transaction.replace(R.id.container, new AdMobTargetFragment()); break;
+            case 4:transaction.replace(R.id.container, new Rewarded()); break;
         }
         transaction.commit();
     }

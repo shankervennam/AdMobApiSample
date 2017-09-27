@@ -5,8 +5,8 @@
         <item>AdMob-Ad Listener</item>
         <item>Admob-Ad Targeting</item>
         <item>AdMob-Banner Sizes</item>
-        <item>DFP - Fluid Size</item>
-        <item>DFP - PPID</item>
+        <item>Native Ad</item>
+        <item>Rewarded Video Ad</item>
         <item>DFP - Custom Targeting</item>
         <item>DFP - Category Exclusions</item>
         <item>DFP - Ad Sizes</item>
@@ -24,5 +24,11 @@
 
     <string name="admob_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="admob_customevent_ad_unit_id">ca-app-pub-3940256099942544/3325725716</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="submit">Submit</string>
 
 </resources>
