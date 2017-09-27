@@ -1,6 +1,5 @@
 package com.example.rvennam.admobapisample;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -9,13 +8,14 @@ import android.os.Bundle;
 
 import com.example.rvennam.admobapisample.fragments.AdMobLisFragment;
 import com.example.rvennam.admobapisample.fragments.AdMobTargetFragment;
+import com.example.rvennam.admobapisample.fragments.BannerSizes;
+import com.example.rvennam.admobapisample.fragments.InterstitialAdView;
+import com.example.rvennam.admobapisample.fragments.NavigationFragment;
 import com.example.rvennam.admobapisample.fragments.Rewarded;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationFragment.NavigationDrawerCallbacks
 {
-    public static final String LOG_TAG = "APIDemos";
-
     private NavigationFragment navigationFragment;
 
     private CharSequence mTitle;
@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity implements
         {
             case 0:transaction.replace(R.id.container, new AdMobLisFragment()); break;
             case 1:transaction.replace(R.id.container, new AdMobTargetFragment()); break;
+            case 2:transaction.replace(R.id.container, new BannerSizes()); break;
             case 4:transaction.replace(R.id.container, new Rewarded()); break;
+            case 5:transaction.replace(R.id.container, new InterstitialAdView()); break;
         }
         transaction.commit();
     }

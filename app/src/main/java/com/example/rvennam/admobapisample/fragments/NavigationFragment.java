@@ -1,4 +1,4 @@
-package com.example.rvennam.admobapisample;
+package com.example.rvennam.admobapisample.fragments;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
@@ -21,6 +21,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.rvennam.admobapisample.R;
 
 public class NavigationFragment extends Fragment
 {

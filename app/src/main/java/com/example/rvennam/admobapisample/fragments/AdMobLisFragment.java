@@ -42,7 +42,6 @@ public class AdMobLisFragment extends Fragment
         mReqAgent = root.findViewById(R.id.req_agent_edit);
         mUrl = root.findViewById(R.id.url_edit);
 
-        final Location location = new Location("MountainView");
         return root;
     }
 
@@ -58,7 +57,7 @@ public class AdMobLisFragment extends Fragment
             @Override
             public void onAdClosed()
             {
-                Log.i("Ads", ":Closed");
+
             }
 
             @Override
@@ -70,26 +69,22 @@ public class AdMobLisFragment extends Fragment
             @Override
             public void onAdLeftApplication()
             {
-
-                Log.i("Ads", ":Left the app");
             }
 
             @Override
             public void onAdOpened()
             {
-                Log.i("Ads", ":Ad opened");
             }
 
             @Override
             public void onAdLoaded()
             {
-               Log.i("Ads", ":Ad loaded");
             }
 
             @Override
             public void onAdClicked()
             {
-                Log.i("Ads", ":Ad clicked");
+
             }
         });
 

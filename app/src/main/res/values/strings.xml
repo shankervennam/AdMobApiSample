@@ -7,10 +7,23 @@
         <item>AdMob-Banner Sizes</item>
         <item>Native Ad</item>
         <item>Rewarded Video Ad</item>
-        <item>DFP - Custom Targeting</item>
-        <item>DFP - Category Exclusions</item>
-        <item>DFP - Ad Sizes</item>
-        <item>DFP - App Events</item>
+        <item>Interstitial</item>
+
+    </string-array>
+
+    <string-array name="bannersizes_largesizes">
+        <item>Banner</item>
+        <item>Large Banner</item>
+        <item>Smart Banner</item>
+        <item>Full Banner</item>
+        <item>Medium Rectangle</item>
+        <item>Leaderboard</item>
+    </string-array>
+
+    <string-array name="bannersizes_smallsizes">
+        <item>Banner</item>
+        <item>Large Banner</item>
+        <item>Smart Banner</item>
     </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
