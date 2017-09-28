@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:text="DFP Category Exclusion"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/no_exclusions_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_text"
+        android:text="Banner (no exclusions - cats or dogs)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <com.google.android.gms.ads.doubleclick.PublisherAdView
+        android:id="@+id/no_exclusions_av"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/no_exclusions_tv"
+        android:layout_marginTop="20dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="/6499/example/APIDemo/CategoryExclusion" />
+
+    <TextView
+        android:id="@+id/exclusions_tv_dogsexcluded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Banner (excluding dogs)"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/no_exclusions_av"
+        android:layout_alignParentStart="true" />
+
+    <com.google.android.gms.ads.doubleclick.PublisherAdView
+        android:id="@+id/exclusions_av_dogsexcluded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/exclusions_tv_dogsexcluded"
+        android:layout_marginTop="20dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="/6499/example/APIDemo/CategoryExclusion" />
+
+    <TextView
+        android:id="@+id/exclusions_tv_catsexcluded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exclusions_av_dogsexcluded"
+        android:text="Banner (excluding cats)"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <com.google.android.gms.ads.doubleclick.PublisherAdView
+        android:id="@+id/exclusions_av_catsexcluded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/exclusions_tv_catsexcluded"
+        android:layout_marginTop="20dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="/6499/example/APIDemo/CategoryExclusion" />
+
+</RelativeLayout>

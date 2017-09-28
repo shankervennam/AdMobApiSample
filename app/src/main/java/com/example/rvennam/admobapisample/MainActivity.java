@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.rvennam.admobapisample.fragments.AdMobLisFragment;
 import com.example.rvennam.admobapisample.fragments.AdMobTargetFragment;
 import com.example.rvennam.admobapisample.fragments.BannerSizes;
+import com.example.rvennam.admobapisample.fragments.DFPCategoryExlusion;
 import com.example.rvennam.admobapisample.fragments.InterstitialAdView;
 import com.example.rvennam.admobapisample.fragments.NavigationFragment;
 import com.example.rvennam.admobapisample.fragments.Rewarded;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements
             case 2:transaction.replace(R.id.container, new BannerSizes()); break;
             case 4:transaction.replace(R.id.container, new Rewarded()); break;
             case 5:transaction.replace(R.id.container, new InterstitialAdView()); break;
+            case 6:transaction.replace(R.id.container, new DFPCategoryExlusion()); break;
         }
         transaction.commit();
     }
